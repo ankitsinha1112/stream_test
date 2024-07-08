@@ -23,7 +23,7 @@ stream.get('/', (req, res) => {
   <script>
     const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
     loadPlayer({
-      url: 'ws://' + location.host + '/admin/stream/api/stream',
+      url: protocol + '//' + location.host + '/admin/stream/api/stream',
       canvas: document.getElementById('canvas')
     });
   </script>

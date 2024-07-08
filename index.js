@@ -4,12 +4,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 // APIS
-// const users = require('./api/client/user');
 // ADMIN
-const users = require('./api/admin/users');
-const area = require('./api/admin/area');
-const device = require('./api/admin/device');
-const ticket = require('./api/admin/ticket');
 const stream = require('./api/admin/stream');
 expressWs(app);
 // Middleware
@@ -17,12 +12,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // ROUTES
-// app.use('/user', users);
-// ADMIN
-app.use('/admin/users', users);
-app.use('/admin/areas', area);
-app.use('/admin/device', device);
-app.use('/admin/ticket', ticket);
 app.use('/admin/stream', (req, res, next) => {
     console.log('Stream route hit');
     next();

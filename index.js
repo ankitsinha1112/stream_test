@@ -6,6 +6,16 @@ const bodyParser = require('body-parser');
 // APIS
 // ADMIN
 const stream = require('./api/admin/stream');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/https://stream-test-zthj.onrender.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/https://stream-test-zthj.onrender.com/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/https://stream-test-zthj.onrender.com/chain.pem', 'utf8');
+
+
+const credentials = {
+    key: privateKey,
+    cert: certificate,
+    ca: ca
+  };
 expressWs(app);
 // Middleware
 app.use(cors());
@@ -23,4 +33,8 @@ app.get('/test', (req, res) => res.send('Test Working !!!'))
 
 const port = process.env.PORT || 8080;
 
-app.listen((port), () => console.log("App is running on port " + port));
+const httpsServer = https.createServer(credentials, app);
+
+httpsServer.listen(port, () => {
+    console.log("App is running on port " + port);
+});

@@ -1,0 +1,33 @@
+{
+  "name": "iot-lights-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-iot": "^3.387.0",
+    "@aws-sdk/client-s3": "^3.369.0",
+    "@aws-sdk/node-http-handler": "^3.374.0",
+    "aws-iot-device-sdk": "^2.2.12",
+    "aws-sdk": "^2.1432.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.19.2",
+    "ffmpeg-static": "^5.2.0",
+    "jsonwebtoken": "^9.0.0",
+    "mqt": "^1.0.2",
+    "mqtt": "^5.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7",
+    "rtsp-relay": "^1.9.0",
+    "xlsx": "^0.18.5"
+  }
+}

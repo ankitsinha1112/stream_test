@@ -4,7 +4,7 @@ const { proxy, scriptUrl } = require('rtsp-relay')(stream);
 const ffmpeg = require('ffmpeg-static');
 
 const handler = proxy({
-  url: `rtsp://167.71.236.148:8554/stream`,
+  url: `rtsp://167.71.236.148:8554/stream1`,
   ffmpegOptions: { 
     ffmpeg: ffmpeg.path // Use ffmpeg-static binary
   },
